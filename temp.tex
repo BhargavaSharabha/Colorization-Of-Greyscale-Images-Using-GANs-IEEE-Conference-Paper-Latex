@@ -1,0 +1,16 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,amsfonts}
+\begin{document}
+
+Training Discriminator \\ \\
+$\max \limits_{D} V(D) =  \mathbb{E}_{x\sim p_{data}(x)}[log D(x)] +  \mathbb{E}_{z\sim p_{z}(z)}[log (1-D(z))]$
+\\ \\ \\
+Training Generator \\ \\
+$\max \limits_{G} V(G) = \mathbb{E}_{z\sim p_{z}(z)}[log(1 - D(G(z)))]$
+\\ \\ \\
+GAN for Image Colorization \\ \\ 
+$\min \limits_{\theta_{G}} J^{(G)}(\theta_{D},\theta_{G}) = \min \limits_{\theta_{G}}-\mathbb{E}_z[log(D(G(0_z|x)))]+  \lambda\parallel G(0_z|x)-y\parallel 1$
+\\ \\ \\
+$\max \limits_{\theta_{G}} J^{(D)}(\theta_{D},\theta_{G}) =  \max \limits_{\theta_{D}}(\mathbb{E}_y[log(D(y|x))]+  \mathbb{E}_z[log(1-D(G(0_x|x)|x))])$
+\\ \\ \\
+\end{document}
